@@ -40,7 +40,7 @@
 int main(int argc, char* argv[]) {
   /* Initialize the ros node */
   ros::init(argc, argv, "turtlebot_walker");
-  
+
   /* Create the Walker object */
   Walker walker;
 
