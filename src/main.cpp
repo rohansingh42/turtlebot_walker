@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
   ros::init(argc, argv, "turtlebot_walker");
   
   /* Create the Walker object */
-  turtlebotWalker walker;
+  Walker walker;
 
   /* Implement walker algorithm for navigating */
   walker.walk();
