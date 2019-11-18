@@ -106,7 +106,7 @@ class Walker {
   *
   * @return Laser scan data
   */
-  sensor_msgs::LaserScan getLaserScanData(); 
+  sensor_msgs::LaserScan getLaserScanData();
 
  /**
   * @brief Function to set collision detection threshold
