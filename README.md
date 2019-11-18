@@ -40,7 +40,7 @@ source ~/catkin_ws/devel/setup.bash
 ```
 roslaunch turtlebot_walker walkerDemo.launch record:=<true/false> record_time:=<recording duration in secs>
 ```
-The default values for the params _record_ and _record_time_ are _true_ and _30_ respectively. The recorded bag files are saved in the _results_ subdirectory.
+The default values for the params _record_ (whether to record or not) and _record_time_ (how long to record) are _false_ and _30_ respectively. The recorded bag files are saved in the _results_ subdirectory.
 
 - To just run the node with the walker algorithm, type in a new terminal,
 ```
@@ -49,9 +49,15 @@ rosrun turtlebot_walker walker
 
 ## Viewing data
 
+- To view rosbag file information, type in a new terminal,
+```
+rosbag info results/<name of bagfile>
+```
+Assuming tha command is run from base directory. If not, give relative path to bag file from current directory.
+
 - To replay the recorded bag file, type in a new terminal (after running roscore),
 ```
-rosbag play /results/<name of bagfile>
+rosbag play results/<name of bagfile>
 ```
 Assuming tha command is run from base directory. If not, give relative path to bag file from current directory.
 
