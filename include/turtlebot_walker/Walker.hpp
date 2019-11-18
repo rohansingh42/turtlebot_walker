@@ -78,7 +78,7 @@ class Walker {
   *
   * @return void
   */
-  void navigate();
+  void walk();
 
  /**
   * @brief Function to return laser scan subscriber object
@@ -106,7 +106,25 @@ class Walker {
   *
   * @return Laser scan data
   */
-  sensor_msgs::LaserScan getLaserScanData();
+  sensor_msgs::LaserScan getLaserScanData(); 
+
+ /**
+  * @brief Function to set collision detection threshold
+  *
+  * @param ct Collision Threshold
+  *
+  * @return void
+  */
+  void setCollisionThreshold(float ct);
+
+ /**
+  * @brief Function to return collision detection threshold
+  *
+  * @return Collision detection threshold
+  */
+  float getCollisionThreshold();
+
+
 
  private:
   /* ROS Node handle object */
@@ -121,6 +139,9 @@ class Walker {
   ros::Publisher cmdVelPub;
   /* Message type to store command velocities */
   geometry_msgs::Twist cmdVel;
+
+  /* Threshold for collision detection */
+  float collisionThreshold = 0.3;
 };
 
 #endif    // INCLUDE_TURTLEBOT_WALKER_WALKER_HPP_
